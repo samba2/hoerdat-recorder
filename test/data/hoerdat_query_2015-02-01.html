@@ -1,0 +1,1128 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0//EN'>
+<html>
+<head>
+  <title>HÖRDAT, die Hörspieldatenbank</title>
+    <meta http-equiv='content-type' content='text/html; charset=ISO-8859-1'>
+    <link rel='shortcut icon' href='http://s507870211.online.de/favicon.ico'>
+  <link rel='stylesheet' type='text/css' href='css/hoerdat.css'>
+<!--[if IE]>
+<style type='text/css'>
+   .sender {
+     display: inline ;
+   }
+</style>
+<![endif]-->
+</head>
+
+<body>
+<div style='text-align:center;'>
+<a name='0'></a>
+<div style='width:40%;'>
+<div style='float:left; border-right:0px solid #000000; position: fixed;  top: 1; left: 1; width:400px; min-height:800px; background-color:#f7f7f7; '>
+
+<table class='form' border='0' cellpadding='0' cellspacing='1' summary='Suchformular'>
+<tr>
+  <td>
+   <a href='/index.php'><img src='img/hd3.gif' title='Zur Startseite' width='125' height='41' alt='HörDat-Logo' border='0'></a>
+
+  </td>
+
+  <td valign='bottom'>
+    <form method='post' action='/index.php'>
+    <input type='hidden' name='dat' value='2015-01-28'>
+    <input type='image' src='img/heute.gif' alt='Heute im Radio' title='Alle Hörspiele, die heute gesendet werden' align='right' style='border:0;'>
+    </form>
+  </td>
+</tr>
+<tr>
+  <td colspan='2'>&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan='2'>
+
+<form method='post' action='/index.php'>
+
+<table class='form' border='0' cellpadding='0' cellspacing='1'>
+
+<tr>
+
+  <td align='left'>&nbsp;
+  </td>
+
+  <td valign='bottom'>
+    <select name='col1' tabindex='1' title='Sie können wählen, in welcher Spalte der Datenbank Suchbegriff 1 gesucht werden soll.'>
+     <option selected value='ti'> Titel
+     <option value='au.an'> Autor-Name
+     <option value='au.av'> Autor-Vorname
+     <option value='pr'> Produktion
+     <option value='yr'> Jahr
+     <option value='re.an'> Regie
+     <option value='be.an'> Bearbeitung
+     <option value='ko.an'> Komposition
+     <option value='ue.an'> Übersetzung
+     <option value='inhv'> Inhalt (Volltext)
+     <option value='mit'> Mitwirkende (VT)
+     <option value='m'> Kunstkopfstereo
+    </select>
+   <input type='text' size='15' name='a' maxlength='40' tabindex='2' title='Ihr Suchbegriff sollte mindestens 3 Zeichen lang sein.'>
+  </td>
+
+</tr>
+
+
+ <tr>
+  <td align='right'>
+    <select name='bool1' tabindex='3' title='Logische Verknüpfung mit dem vorhergehenden Suchbegriff, wenn vorhanden.'>
+     <option selected value='and'> UND
+     <option value='or'> ODER
+     <option value='not'> NICHT
+    </select>
+  </td>
+  <td align='left'>
+    <select name='col2' tabindex='4' title='Sie können wählen, in welcher Spalte der Datenbank Suchbegriff 2 gesucht werden soll.'>
+     <option value='ti'> Titel
+     <option selected value='au.an'> Autor-Name
+        <option value='au.av'> Autor-Vorname
+        <option value='pr'> Produktion
+        <option value='yr'> Jahr
+        <option value='re.an'> Regie
+        <option value='be.an'> Bearbeitung
+        <option value='ko.an'> Komposition
+        <option value='ue.an'> Übersetzung
+        <option value='inhv'> Inhalt (Volltext)
+        <option value='mit'> Mitwirkende (VT)
+        <option value='m'> Kunstkopfstereo
+       </select>
+      <input type='text' size='15' name='b' maxlength='40' tabindex='5' title='Ihr Suchbegriff sollte mindestens 3 Zeichen lang sein.'>
+     </td>
+
+    </tr>
+    <tr>
+     <td align='right'>
+       <select name='bool2' tabindex='6' title='Logische Verknüpfung mit dem vorhergehenden Suchbegriff, wenn vorhanden.'>
+        <option selected value='and'> UND
+        <option value='or'> ODER
+        <option value='not'> NICHT
+       </select>
+     </td>
+
+     <td align='left'>
+       <select name='col3' tabindex='7' title='Sie können wählen, in welcher Spalte der Datenbank Suchbegriff 3 gesucht werden soll.'>
+        <option value='ti'> Titel
+        <option value='au.an'> Autor-Name
+        <option selected value='au.av'> Autor-Vorname
+        <option value='pr'> Produktion
+        <option value='yr'> Jahr
+        <option value='re.an'> Regie
+        <option value='be.an'> Bearbeitung
+        <option value='ko.an'> Komposition
+        <option value='ue.an'> Übersetzung
+        <option value='inhv'> Inhalt (Volltext)
+        <option value='mit'> Mitwirkende (VT)
+        <option value='m'> Kunstkopfstereo
+       </select>
+      <input type='text' size='15' name='c' maxlength='40' tabindex='8' title='Ihr Suchbegriff sollte mindestens 3 Zeichen lang sein.'>
+     </td>
+    </tr>
+
+    <tr>
+     <td align='right'>
+       <select name='bool8' tabindex='11' title='Logische Verknüpfung mit dem vorhergehenden Suchbegriff, wenn vorhanden.'>
+        <option selected value='and'> UND
+        <option value='or'> ODER
+        <option value='not'> NICHT
+       </select>
+     </td>
+
+     <td>
+         <select name='sp' tabindex='12' title=''>
+           <option selected value=''> -- Sprache: -- </option>
+        <option value='Deutsch'>Deutsch</option>
+        <option value='Englisch'>Englisch</option>
+        <option value='Deutsch/Englisch'>Deutsch/Englisch</option>
+        <option value='Französisch'>Französisch</option>
+        <option value='Deutsch/Französisch'>Deutsch/Französisch</option>
+        <option value='Italienisch'>Italienisch</option>
+        <option value='Deutsch/Italienisch'>Deutsch/Italienisch</option>
+        <option value='Spanisch'>Spanisch</option>
+        <option value='Deutsch/Spanisch'>Deutsch/Spanisch</option>
+        <option value='Portugiesisch'>Portugiesisch</option>
+        <option value='Deutsch/Portugiesisch'>Deutsch/Portugiesisch</option>
+        <option value='Russisch'>Russisch</option>
+        <option value='Deutsch/Russisch'>Deutsch/Russisch</option>
+        <option value='Sonstige'>Sonstige</option>
+        <option value='Deutsch/Sonstige'>Deutsch/Sonstige</option>
+        <option value='Dialekt'>Dialekt</option>
+        <option value='Vielsprachig'>Vielsprachig</option>
+        <option value='Türkisch'>Türkisch</option>
+        <option value='Deutsch/Türkisch'>Deutsch/Türkisch</option>
+         </select>
+     </td>
+    </tr>
+
+    <tr>
+     <td align='right'>
+       <select name='bool4' tabindex='13' title='Logische Verknüpfung mit dem vorhergehenden Suchbegriff, wenn vorhanden.'>
+        <option selected value='and'> UND
+        <option value='or'> ODER
+        <option value='not'> NICHT
+       </select>
+     </td>
+
+     <td align='left'>
+         <select name='ga' tabindex='14' title=''>
+             <option selected value=''> -- Art des Hörspiels: -- </option>
+        <option value='Originalhörspiel dt.'>Originalhörspiel dt.</option>
+        <option value='Originalhörspiel int.'>Originalhörspiel int.</option>
+        <option value='Bearbeitung Literatur'>Bearbeitung Literatur</option>
+        <option value='Bearbeitung Theater'>Bearbeitung Theater</option>
+        <option value='Bearbeitung Musik'>Bearbeitung Musik</option>
+        <option value='Bearbeitung Film'>Bearbeitung Film</option>
+        <option value='Feature'>Feature</option>
+         </select>
+     </td>
+    </tr>
+
+
+    <tr>
+     <td align='right'>
+       <select name='bool5' tabindex='15' title='Logische Verknüpfung mit dem vorhergehenden Suchbegriff, wenn vorhanden.'>
+        <option selected value='and'> UND
+        <option value='or'> ODER
+        <option value='not'> NICHT
+       </select>
+     </td>
+
+     <td align='left'>
+         <select name='gb' tabindex='16' title=''>
+             <option selected value=''> -- Genre: -- </option>
+        <option value='7200'></option>
+        <option value='7201'>Amateurhörspiel</option>
+        <option value='7202'>Audio Art</option>
+        <option value='7203'>Biographie</option>
+        <option value='7204'>Dokumentation</option>
+        <option value='7224'>Dystopie</option>
+        <option value='7222'>Fabel</option>
+        <option value='7205'>Fantasy, Märchen für Erwachsene</option>
+        <option value='7206'>Fantasy, Märchen für Kinder</option>
+        <option value='7207'>Funkoper</option>
+        <option value='7232'>Gehörspiel</option>
+        <option value='7225'>Groteske</option>
+        <option value='7208'>Hörspieltheorie</option>
+        <option value='7209'>Jugendhörspiel</option>
+        <option value='7210'>Kinderhörspiel</option>
+        <option value='72101'>Kinderhörspiel ab  4 Jahre</option>
+        <option value='72102'>Kinderhörspiel ab  6 Jahre</option>
+        <option value='72103'>Kinderhörspiel ab  8 Jahre</option>
+        <option value='72104'>Kinderhörspiel ab 10 Jahre</option>
+        <option value='72105'>Kinderhörspiel ab 12 Jahre</option>
+        <option value='7211'>Komödie</option>
+        <option value='7212'>Krimi</option>
+        <option value='7228'>Live-Hörspiel</option>
+        <option value='7213'>Lyrik</option>
+        <option value='7227'>Mitmachhörspiel</option>
+        <option value='7226'>Mockumentary/Pseudo-Dokumentation</option>
+        <option value='7214'>Monolog</option>
+        <option value='7229'>Mundarthörspiel</option>
+        <option value='72293'>Mundarthörspiel (alemannisch)</option>
+        <option value='72294'>Mundarthörspiel (badisch)</option>
+        <option value='72295'>Mundarthörspiel (badisch-alemannisch)</option>
+        <option value='72292'>Mundarthörspiel (badisch-pfälzisch)</option>
+        <option value='72300'>Mundarthörspiel (bayerisch)</option>
+        <option value='72299'>Mundarthörspiel (berlinerisch)</option>
+        <option value='72297'>Mundarthörspiel (niederdeutsch)</option>
+        <option value='72298'>Mundarthörspiel (schweizerdeutsch)</option>
+        <option value='72291'>Mundarthörspiel (schwäbisch)</option>
+        <option value='72301'>Mundarthörspiel (südniederfränkisch)</option>
+        <option value='72296'>Mundarthörspiel (sächsisch)</option>
+        <option value='7215'>Musical</option>
+        <option value='7221'>Nicht produziert</option>
+        <option value='7234'>Ohrenspiel</option>
+        <option value='7216'>Originalton</option>
+        <option value='7217'>Pophörspiel</option>
+        <option value='7218'>Science Fiction</option>
+        <option value='7219'>Sprachexperiment</option>
+        <option value='7233'>Tonmonade</option>
+        <option value='7220'>Unterhaltung</option>
+        <option value='7223'>Utopie</option>
+         </select>
+     </td>
+    </tr>
+
+    <tr>
+     <td align='right'>
+       <select name='bool7' tabindex='19' title='Logische Verknüpfung mit dem vorhergehenden Suchbegriff, wenn vorhanden.'>
+        <option selected value='and'> UND
+        <option value='or'> ODER
+        <option value='not'> NICHT
+       </select>
+     </td>
+
+     <td align='left' colspan='1'>
+         <select name='aw' tabindex='20' title=''>
+             <option selected value=''> -- Preise/Auszeichnungen: -- </option>
+             <option value='alle'> (irgendein Preis) </option>
+        <option value='39'>ARD Hörspielpreis</option>
+        <option value='101'>ARD Hörspielpreis (Lobende Erwähnung</option>
+        <option value='113'>ARD Kinderhörspielpreis</option>
+        <option value='36'>ARD Online-Award</option>
+        <option value='112'>ARD PINball</option>
+        <option value='16'>Acustica International</option>
+        <option value='17'>Autorenpreis der Kritiker (DDR)</option>
+        <option value='15'>BBC-Newcomer-Award</option>
+        <option value='14'>BBC/British Council International Pl</option>
+        <option value='75'>BR-hör!spiel!art.mix-Wettbewerb</option>
+        <option value='8'>Baseler Hörspielpreis</option>
+        <option value='37'>Bestes Mundarthörspiel des Jahres ("</option>
+        <option value='102'>Bestes ausländische Hörstück auf dem</option>
+        <option value='51'>CD des Monats des Institutes für ang</option>
+        <option value='97'>Das lange brennende Mikro (Jurypreis</option>
+        <option value='56'>Deutsch-Türkischer Hörspiel-Wettbewe</option>
+        <option value='85'>Deutscher CIVIS Radiopreis Hörspiel,</option>
+        <option value='96'>Deutscher Hörbuchpreis: "Beste Fikti</option>
+        <option value='70'>Deutscher Hörbuchpreis: "Bestes Kind</option>
+        <option value='69'>Deutscher Hörbuchpreis: "Das besonde</option>
+        <option value='27'>Deutscher Kinderhörspielpreis</option>
+        <option value='22'>Deutschweizer Hörspielpreis</option>
+        <option value='114'>Dr. Karl Renner Publizistikpreis</option>
+        <option value='103'>Ernst-Reuter-Preis</option>
+        <option value='57'>Ernst-Schneider-Preis der deutschen </option>
+        <option value='58'>Ernst-Schneider-Preis der deutschen </option>
+        <option value='13'>Evening Standard Drama Award</option>
+        <option value='99'>Felix-Rexhausen-JournalistInnen-Prei</option>
+        <option value='26'>Grand Prix Marulic</option>
+        <option value='79'>Hans-Henning-Holm-Preis für niederde</option>
+        <option value='48'>Hohrch-Hörspielwettbewerb (Radio Hel</option>
+        <option value='18'>Hörerpreis (DDR)</option>
+        <option value='87'>Hörfunkpreis der Bundesarbeitsgemein</option>
+        <option value='4'>Hörspiel des Jahres (ARD)</option>
+        <option value='21'>Hörspiel des Jahres (Schweiz)</option>
+        <option value='5'>Hörspiel des Jahres (Österreich)</option>
+        <option value='32'>Hörspiel des Jahrzehnts</option>
+        <option value='2'>Hörspiel des Monats</option>
+        <option value='50'>Hörspiel des Monats (Lobende Erwähnu</option>
+        <option value='41'>Hörspiel-Kritikerpreis für das künst</option>
+        <option value='3'>Hörspielpreis der Akademie der Künst</option>
+        <option value='1'>Hörspielpreis der Kriegsblinden</option>
+        <option value='44'>Hörspielpreis des Hörspielsommers Le</option>
+        <option value='43'>Internationaler Hörspielnachwuchswet</option>
+        <option value='68'>Internationaler Kinderhörspielpreis </option>
+        <option value='71'>Journalistenpreis "Positiv leben" de</option>
+        <option value='110'>Juliane Barthel Preis</option>
+        <option value='60'>Karl-Sczuka-Förderpreis</option>
+        <option value='7'>Karl-Sczuka-Preis</option>
+        <option value='29'>Karlsruher Hörspielpreis (Querfunk)</option>
+        <option value='82'>Kinderhörspielpreis der Stadt Karlsr</option>
+        <option value='28'>Kinderhörspielpreis des MDR-Rundfunk</option>
+        <option value='77'>Kritikerpreis des Verbands der Deuts</option>
+        <option value='47'>Kunstpreis des FDGB</option>
+        <option value='10'>Kurd-Laßwitz-Preis</option>
+        <option value='35'>Kurt-Magnus-Preis</option>
+        <option value='74'>Kurzes brennendes Mikro (Publikumspr</option>
+        <option value='81'>Kurzhörspiel-Wettbewerb "KURZ & GUT"</option>
+        <option value='80'>Kurzhörspiel-Wettbewerb "KURZ & GUT"</option>
+        <option value='52'>Kurzhörspiel-Wettbewerb "kurz & gut"</option>
+        <option value='61'>LEOPOLD Medienpreis "Gute Musik für </option>
+        <option value='94'>Leipziger Hörspielsommer: "Beste Ide</option>
+        <option value='108'>Leipziger Hörspielsommer: "Beste Ins</option>
+        <option value='90'>Leipziger Hörspielsommer: "Beste Ins</option>
+        <option value='100'>Leipziger Hörspielsommer: "Beste Mon</option>
+        <option value='91'>Leipziger Hörspielsommer: "Beste Spr</option>
+        <option value='95'>Leipziger Hörspielsommer: "Bester Au</option>
+        <option value='89'>Leipziger Hörspielsommer: "Bestes Kl</option>
+        <option value='107'>Leipziger Hörspielsommer: "Bestes Ku</option>
+        <option value='106'>Leipziger Hörspielsommer: "Bestes La</option>
+        <option value='109'>Leipziger Hörspielsommer: "Lobende E</option>
+        <option value='73'>Medienpreis der SRG idée suisse Zent</option>
+        <option value='104'>Medienpreis des Berufsverbandes der </option>
+        <option value='19'>Morishige Award (Japan)</option>
+        <option value='45'>NRW-Hörspielpreis</option>
+        <option value='83'>New York Festival for Radio Broadcas</option>
+        <option value='59'>New York Festival for Radio Broadcas</option>
+        <option value='54'>New York Festival for Radio Broadcas</option>
+        <option value='40'>Newcomerpreis Premiere im Netz</option>
+        <option value='111'>Palma Ars Acustica (Euroradio EBU-UE</option>
+        <option value='30'>Plopp!</option>
+        <option value='63'>Preis der Stadt Bern (Berner Stiftun</option>
+        <option value='11'>Premios Ondas</option>
+        <option value='33'>Prix Europa</option>
+        <option value='76'>Prix Europa - Beste Europäische Radi</option>
+        <option value='67'>Prix Europa - Bestes Europäisches Ra</option>
+        <option value='20'>Prix Futura</option>
+        <option value='98'>Prix Futura (Lobende Erwähnung)</option>
+        <option value='38'>Prix Hörverlag</option>
+        <option value='93'>Prix Italia (Kategorie Radio Documen</option>
+        <option value='6'>Prix Italia (Kategorie Radio Drama)</option>
+        <option value='92'>Prix Italia (Kategorie Radio Music)</option>
+        <option value='49'>Prix Italia (Lobende Erwähnung)</option>
+        <option value='55'>Prix Marulic (Kategorie Documentary)</option>
+        <option value='53'>Prix Marulic (Kategorie Drama)</option>
+        <option value='88'>Prix Marulic (Kategorie Kurzstücke)</option>
+        <option value='25'>Prix Marulic Spezialpreis</option>
+        <option value='105'>Prix Phonurgia Nova</option>
+        <option value='46'>Prix Suisse</option>
+        <option value='31'>Prix ex aequo</option>
+        <option value='66'>Radio-Preis der Rias Berlin Kommissi</option>
+        <option value='23'>Regiepreis der Kritiker (DDR)</option>
+        <option value='34'>Robert-Geisendörfer-Preis</option>
+        <option value='72'>Schweizer Kinder- und Jugendmedienpr</option>
+        <option value='84'>Slabbesz (Preis der Hörspieltage des</option>
+        <option value='24'>Sonderpreis der Kritiker (DDR)</option>
+        <option value='12'>Sony Award</option>
+        <option value='64'>Stereopreis der Deutschen Rundfunkin</option>
+        <option value='42'>Track 5 Kurzhörspiel-Wettbewerb (ORF</option>
+        <option value='78'>radioeins Hörspielkino-Publikumsprei</option>
+        <option value='9'>terre des hommes - Kinderhörspielpre</option>
+        <option value='65'>Åke Blomstrom Memorial Prize</option>
+         </select>
+     </td>
+    </tr>
+
+<tr>
+   <td align='right' valign='top' colspan='1'> Sortierung:&nbsp;
+   </td>
+
+   <td align='left' valign='bottom' colspan='1'>
+      <label for='so1'><input id='so1' type=radio name='so' checked value='autor' tabindex='25'> Autor</label>
+      <label for='so2'><input id='so2' type=radio name='so' value='titel'> Titel</label>
+      <label for='so3'><input id='so3' type=radio name='so' value='jahr'> Jahr</label>
+      <label for='so4'><input id='so4' type=radio name='so' value='prod'> Prod.</label>
+      <label for='so5'><input id='so5' type=radio name='so' value='term'> Termin</label>
+      <br>
+      <label for='so6'><input id='so6' type=radio name='soo' checked value='asc'> A - Z</label>
+      <label for='so7'><input id='so7' type=radio name='soo' value='desc'> Z - A</label>
+   </td>
+ </tr>
+
+    <tr>
+      <td align='right' colspan='1'> Sendezeitraum: &nbsp;
+      </td>
+
+      <td align='left' colspan='1'>
+       <select name='dat' tabindex='21' title='Auswahl des Sendezeitraums'>
+<option selected value="">  -- Tag / Woche / Monat: --  
+        <option value="2015-01-27">Gestern
+        <option value="2015-01-28">Heute
+        <option value="2015-01-29">Morgen
+        <option value="2015-01-30">Übermorgen
+       <option value="">  ------------------  
+        <option value="w042015">  04. Woche 2015
+        <option value="w052015">  05. Woche 2015 (diese Woche)
+        <option value="w062015">  06. Woche 2015
+        <option value="w072015">  07. Woche 2015
+        <option value="w082015">  08. Woche 2015
+        <option value="w092015">  09. Woche 2015
+       <option value="">  ------------------  
+        <option value="m122014">  Dezember 2014
+        <option value="m012015">  Januar 2015
+        <option value="m022015">  Februar 2015
+        <option value="m032015">  März 2015
+       </select>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td align='right' valign='top' colspan='1'>
+        Sendung beim:
+      </td>
+      <td align='left' colspan='1'>
+       <div class='tr'>
+        <div class='sender'><label for=' se7'><input id='se7' TYPE='checkbox' name='sender[]' VALUE='%' tabindex='22'> (alle) </label></div>
+        <div class='sender'><label for=' se8'><input id='se8' TYPE='checkbox' name='sender[]' VALUE='br'> BR </label></div>
+        <div class='sender'><label for=' se9'><input id='se9' TYPE='checkbox' name='sender[]' VALUE='dlf'> DLF </label></div>
+        <div class='sender'><label for='se10'><input id='se10' TYPE='checkbox' name='sender[]' VALUE='dlr'> DLR </label></div>
+       </div>
+       <div class='tr'>
+        <div class='sender'><label for='se11'><input id='se11' TYPE='checkbox' name='sender[]' VALUE='srf'> SRF </label></div>
+        <div class='sender'><label for='se12'><input id='se12' TYPE='checkbox' name='sender[]' VALUE='hr'> HR </label></div>
+        <div class='sender'><label for='se13'><input id='se13' TYPE='checkbox' name='sender[]' VALUE='mdr'> MDR </label></div>
+        <div class='sender'><label for='se14'><input id='se14' TYPE='checkbox' name='sender[]' VALUE='ndr'> NDR </label></div>
+       </div>
+       <div class='tr'>
+        <div class='sender'><label for='se15'><input id='se15' TYPE='checkbox' name='sender[]' VALUE='orf'> ORF </label></div>
+        <div class='sender'><label for='se16'><input id='se16' TYPE='checkbox' name='sender[]' VALUE='rb n'> RB </label></div>
+        <div class='sender'><label for='se17'><input id='se17' TYPE='checkbox' name='sender[]' VALUE='rbb'> RBB </label></div>
+        <div class='sender'><label for='se18'><input id='se18' TYPE='checkbox' name='sender[]' VALUE='sr'>  SR </label></div>
+       </div>
+       <div class='tr'>
+        <div class='sender'><label for='se19'><input id='se19' TYPE='checkbox' name='sender[]' VALUE='swr'> SWR </label></div>
+        <div class='sender'><label for='se20'><input id='se20' TYPE='checkbox' name='sender[]' VALUE='wdr'> WDR </label></div>
+        <div class='sender'>       </div>
+        <div class='sender'><label for='se21'><input id='se21' name='sender[]' value='radio corax' type='checkbox'> CORAX </label></div>
+       </div>
+
+  </td>
+</tr>
+<tr>
+  <td align='right' colspan='2'>
+    &nbsp;
+  </td>
+</tr>
+<tr>
+  <td align='right' colspan='2'>
+    <input type='submit' style='width:110px;' value='Suche starten' tabindex='23'>
+    <input type='reset' style='width:110px;' value='Eingaben löschen' tabindex='24'>
+  </td>
+</tr>
+
+<tr>
+  <td colspan='2'>&nbsp;</td>
+</tr>
+
+<tr>
+  <td align='left' colspan='2'>&nbsp;
+  </td>
+</tr>  </table>
+ </form>
+    </tr>
+</table>
+
+</div></div>
+
+<div style='margin-left:400px; float: left; padding: 0em 2em;'>
+<a name='0'></a>
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-27">gestern</a> | <a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-28">heute</a> | <a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-29">morgen</a> | <a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-30">30. Jan</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-31">31. Jan</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-01"> 1. Feb</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-02"> 2. Feb</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-03"> 3. Feb</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-04"> 4. Feb</a> | 
+<h1 id='pagetitle'>10 Hörspiele  im Zeitraum Sonntag,  1. Februar 2015</h1><table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a name='1'></a><span style='font-weight:bold; font-size:1.6em;'>| 1 |</span>
+  <a title='weiter zu Datensatz 2' class='navi' href='#2'>2 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Die haarsträubenden Abenteuer des Detektivs Dick Dickson 1:</h1> <h2> Jagd nach dem Niespulver</h2>
+</th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> MDR Figaro - Sonntag,  1. Feb 2015 07:05, (angekündigte Länge:    55:00)
+<br /><div class='streams'> [<a title='MDR Figaro-Realplayer-Stream' href='http://mdr.streamfarm.net/cms/_vr100/radios/mdr/live/figaro_cms'>real-Stream</a>] 
+ [<a title='MDR Figaro-Windows Mediaplayer-Stream' href='http://mdr.streamfarm.net/cms/_vm100/radios/mdr/live/figaro_cms.asx'>winmedia-Stream</a>] 
+ [<a title='MDR Figaro-MP3-Stream' href='http://avw.mdr.de/livestreams/mdr_figaro_live_128.m3u'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Hans Pfeiffer<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>DDR 1961    32 Min. (Mono) - Originalhörspiel dt. </td></tr>
+<tr>
+<td class='right'>Genre(s):</td>
+<td> Kinderhörspiel<br>  Groteske<br>  Krimi<br>  Komödie<br> </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Ingeborg Milster  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Günter Pohlenz  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Der berühmte Privatdetektiv Dickson vernichtet im Übereifer nach einer tollen Verfolgungsjagd das als Kampfmittel für die Polizei hergestellte, vom Gangsterchef Big Bob geraubte, konzentrierte Niespulver und zieht den Zorn des Scherzartikel-Konzerns, der Polizei und der Gangster auf sich. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'>Dick Dickson
+<td class='mit'>Robert Johannsen
+<tr><td class='rol'>Patricia Pudding
+<td class='mit'>Ellinor Vogel
+<tr><td class='rol'>Gangsterchef Big Bob
+<td class='mit'>Helmut Müller-Lankow
+<tr><td class='rol'>Niespulverfabrikant Bill Carter
+<td class='mit'>Heinz Scholz
+<tr><td class='rol'>Kommisar Peppermit
+<td class='mit'>Fred Ludwig
+<tr><td class='rol'>Erzähler
+<td class='mit'>Herbert Köfer
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td> <a href='dtsp.pl?av=Hans&amp;a=Pfeiffer&amp;b=Jagd+nach+dem+Niespulver&amp;n=1028001'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Pfeiffer&amp;b=+Jagd+nach+dem+Niespulver&amp;c=DDR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 1' class='navi' href='#1'>&larr; 1</a>
+  <a name='2'></a><span style='font-weight:bold; font-size:1.6em;'>| 2 |</span>
+  <a title='weiter zu Datensatz 3' class='navi' href='#3'>3 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Als mein Vater ein Busch wurde und ich meinen Namen verlor</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> DLR - Sonntag,  1. Feb 2015 08:05, (angekündigte Länge:    52:00)
+<br /><div class='streams'> [<a title='DLR-Windows Mediaplayer-Stream' href='http://www.dradio.de/streaming/dkultur.asx'>winmedia-Stream</a>] 
+ [<a title='DLR-MP3-Stream' href='http://www.dradio.de/streaming/dkultur.m3u'>mp3-Stream</a>] 
+ [<a title='DLR-Ogg Vorbis-Stream (mittlere Qualität)' href='http://www.dradio.de/streaming/dkultur_mq_ogg.m3u'>ogg-Stream</a>] 
+ [<a title='DLR-Ogg Vorbis-Stream (hohe Qualität)' href='http://www.dradio.de/streaming/dkultur_hq_ogg.m3u'>ogg-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Joke van Leeuwen<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>SWR 2014       Min. (Stereo) - Bearbeitung Literatur </td></tr>
+<tr>
+<td class='right'>Genre(s):</td>
+<td> Kinderhörspiel<br> </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Iris Drögekamp  <br /></td></tr>
+<tr>
+<td class='right'>Bearbeiter:</td>
+<td>Iris Drögekamp  <br /></td></tr>
+<tr>
+<td class='right'>Übersetzer:</td>
+<td>Hanni Ehlers  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>In Todas Dorf kommt der Krieg, da schickt sie die Großmutter alleine über die Grenze.<br />
+Bevor Todas Vater ein Busch wurde, war er Feinbäcker. Jeden Tag buk er 20 Sorten Kuchen und drei Sorten Torte. Aber dann begannen die einen, gegen die anderen zu kämpfen, und Todas Vater musste weg, um die einen gegen die anderen zu verteidigen. Zum Glück hat er ein Buch, in dem erklärt wird, wie man sich tarnen kann, z. B. als Busch. Toda bleibt bei ihrer Oma, bis der Krieg auch zu ihnen kommt und es zu gefährlich für ein Kind wird. Toda soll über die Grenze gehen, nach woanders, wo ihre Mutter wohnt. Der Weg nach woanders ist weit und steckt voller Gefahren und Abenteuer. Doch Toda gibt nicht auf! </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'><td class='mit'>Liv Lisa Fries
+<tr><td class='rol'><td class='mit'>Matthias Breitenbach
+<tr><td class='rol'><td class='mit'>Gabriela Badura
+<tr><td class='rol'><td class='mit'>Almut Henkel
+<tr><td class='rol'><td class='mit'>Christian Redl
+<tr><td class='rol'><td class='mit'>Hedi Kriegeskotte
+<tr><td class='rol'><td class='mit'>Martin Rentsch
+<tr><td class='rol'><td class='mit'>Holger Kunkel
+<tr><td class='rol'><td class='mit'>Stephanie Brehme
+<tr><td class='rol'><td class='mit'>Lisa Schlegel
+<tr><td class='rol'><td class='mit'>Constanze Wenig
+<tr><td class='rol'><td class='mit'>Birgit Bücker
+<tr><td class='rol'><td class='mit'>u. v. a.
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td> <a href='dtsp.pl?av=Joke+van&amp;a=Leeuwen&amp;b=Als+mein+Vater+ein+Busch+wurde+und+ich+meinen+Namen+verlor&amp;n=1047829'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Leeuwen&amp;b=+Als+mein+Vater+ein+Busch+wurde+und+ich+meinen+Namen+verlor&amp;c=SWR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 2' class='navi' href='#2'>&larr; 2</a>
+  <a name='3'></a><span style='font-weight:bold; font-size:1.6em;'>| 3 |</span>
+  <a title='weiter zu Datensatz 4' class='navi' href='#4'>4 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> King of Kings</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> HR 2 - Sonntag,  1. Feb 2015 14:05 (Ursendung) , (angekündigte Länge:    55:00)
+<br /><div class='streams'> [<a title='HR 2-Windows Mediaplayer-Stream' href='http://metafiles.gl-systemhaus.de/hr/hr2_1.asx'>winmedia-Stream</a>] 
+ [<a title='HR 2-MP3-Stream' href='http://metafiles.gl-systemhaus.de/hr/hr2_2.m3u'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Oliver Sturm<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>hr 2015       Min. (Stereo) - Originalhörspiel dt. </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Oliver Sturm  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Andreas Bick  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>King of Kings - der König der Könige, das war der libysche Herrscher Oberst Muammar al-Gaddafi, nachdem ihn über 200 afrikanische Könige und Stammesherrscher 2008 zum solchen ernannten. König der Könige - das war auch der biblische König Saul, von den israelitischen Stämmen zum Anführer bestimmt, vom Propheten Samuel gesalbt und damit göttlich legitimiert. Ebenfalls von höchster Stelle legitimiert fühlt sich Gaddafi. Sein Grünes Buch wird ihm vom Propheten höchstpersönlich in die Feder diktiert, auch wenn nicht alles davon auf den ersten Blick Sinn ergeben mag. Doch für Zweifel ist keine Zeit. Es gilt, die libyschen Stämme vereint in eine große Zukunft zu führen. Wie Sauls Herrschaft verläuft auch die Gaddafis alles andere als geradlinig. Konflikte mit äußeren Feinden, die Intrigen am Hofe, der Schatten, der sich irgendwann über den Geist des Herrschers senkt, seine inneren Dämonen, die ihn quälen. Und dann ist da noch dieser junge Lautenspieler, der dem König die Zuneigung aller streitig macht. Alles läuft auf ein Ende zu, das, mehr kläglich als glorreich, uns allen bekannt ist. Vor dem Hintergrund der religiös geprägten Umsturzbewegungen in Nordafrika und dem Vorderen Orient erscheint die Tragödie Sauls - des von Gott verlassenen Herrschers - in einem erstaunlich zeitgenössischen Licht. Im Anschluss: Die Samuelbücher - biblische Geschichtsschreibung und literarisches Kunstwerk von Walter Dietrich Die Samuelbücher des Alten Testaments sind ein hochliterarisches Zeugnis über die Zeit der Gründung des Königreichs Israel. In ihnen finden sich die Geschichten um Saul, den ersten Herrscher der nunmehr vereinigten israelitischen Nomadenstämme, und um David, den alles überstrahlenden König, Sehnsuchtsfigur vieler kommender Epochen. Walter Dietrich beleuchtet in seinem Essay das Spannungsverhältnis der Samuelbücher zwischen religiöser Literatur und Geschichtsschreibung. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'>Bibel
+<td class='mit'>Hans Peter Hallwachs
+<tr><td class='rol'>Gaddafi
+<td class='mit'>Reiner Schöne
+<tr><td class='rol'>Soraya
+<td class='mit'>Effi Rabsilber
+<tr><td class='rol'>Journalist
+<td class='mit'>Michael Rotschopf
+<tr><td class='rol'>Reporter
+<td class='mit'>Samir Fuchs
+<tr><td class='rol'>Prophet
+<td class='mit'>Sebastian Rudolph
+<tr><td class='rol'>Sheitan
+<td class='mit'>Lars Rudolph
+<tr><td class='rol'>Ehefrau
+<td class='mit'>Uta Hallant
+<tr><td class='rol'>Fatiah
+<td class='mit'>Sanam Afrashteh
+<tr><td class='rol'>Mabruka
+<td class='mit'>Inaam Wali
+<tr><td class='rol'>Faiza
+<td class='mit'>Larissa Fuchs
+<tr><td class='rol'>David
+<td class='mit'>Mario Fuchs
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td><img alt='Externer Link' title='Externer Link' src='img/extern.png' /> <a href='http://www.andreas-bick.de/'>Homepage Andreas Bick</a><br> 
+ <a href='dtsp.pl?av=Oliver&amp;a=Sturm&amp;b=King+of+Kings&amp;n=1047884'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Sturm&amp;b=+King+of+Kings&amp;c=hr'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 3' class='navi' href='#3'>&larr; 3</a>
+  <a name='4'></a><span style='font-weight:bold; font-size:1.6em;'>| 4 |</span>
+  <a title='weiter zu Datensatz 5' class='navi' href='#5'>5 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1>Der ewige Spießer</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> BR 2 - Sonntag,  1. Feb 2015 15:00 Teil 3/4 (Ursendung) <br /><div class='streams'> [<a title='BR 2-Realplayer-Stream' href='http://streams.br-online.de/bayern2.smil'>real-Stream</a>] 
+ [<a title='BR 2-Windows Mediaplayer-Stream' href='http://streams.br-online.de/bayern2_2.asx'>winmedia-Stream</a>] 
+ [<a title='BR 2-MP3-Stream' href='http://br-mp3-bayern2sued-m.akacast.akamaistream.net/7/731/256282/v1/gnl.akacast.akamaistream.net/br_mp3_bayern2sued_m'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Ödön von Horváth<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>BR  2015       Min. (Stereo) - Bearbeitung Literatur </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Bernadette Sonnenbichler  <br /></td></tr>
+<tr>
+<td class='right'>Bearbeiter:</td>
+<td>Katarina Agathos  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Georg Glasl  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>"Es soll nun versucht werden, in Form eines Romans einige Beiträge zur Biologie dieses werdenden Spießers zu liefern. Der Verfasser wagt natürlich nicht zu hoffen, daß er durch diese Seiten ein gesetzmäßiges Weltgeschehen beeinflussen könnte, jedoch immerhin." Es sind Wandlungsgeschichten unter dem Einfluss der Zeit, die Ödön von Horváth in seinem dreiteiligen Roman "Der ewige Spießer" erzählt. Im München des Jahres 1929 ist der Erste Weltkrieg noch nicht lange vorbei. Die Wirtschaftskrise macht sich im Alltag bemerkbar und radikale rechte wie linke Ideologien breiten sich aus. Dazwischen Durchschnittsmenschen wie Alfons Kobler, Anna Pollinger und Josef Reithofer. Teil 1: "Herr Kobler wird Paneuropäer". Als er im Schellingsalon seinen Freunden von einer Reise zur Weltausstellung in Barcelona erzählt, hat Alfons Kobler noch keine klare Vorstellung von der paneuropäischen Idee. Und auch die Begegnung mit dem geschwätzigen Wiener Journalisten Schmitz auf der langen Zugreise bleibt diesbezüglich eher theoretisch. Erst als Kobler in Barcelona seine mühsam eroberte Geliebte an den kapitalen Mister A. Kaufmann verliert, ist er restlos überzeugt, dass es gilt, Grenzen zu überwinden. Im europäischen Zusammenschluss gegen die rohe amerikanische Übermacht liegt die Zukunft. Nicht nur in Liebesdingen. Ein wenig diffus noch ist diese neue Perspektive und vielleicht doch auch gegen den unbestreitbar konservativen Kern der eigenen Seele sprechend, jedoch immerhin. Teil 2: "Fräulein Pollinger wird praktisch." Weil sie ihre Arbeit verliert, bleibt ihr nichts anderes übrig, wird ihr gesagt. Beim nächsten Rendezvous, einer Autofahrt an den Starnberger See, sagt Anna Pollinger vor dem ersten Kuss also "Umsonst gibt es nichts!" und verhandelt. Sie hat dann zwar keine Gefühle dabei, jedoch immerhin. Danach hält sie ein Fünfmarkstück in der Hand. Teil 3: "Herr Reithofer wird selbstlos". Obwohl er ein Mistvieh ist und im Arbeitsamt in der Thalkirchener Straße mit Anna Pollinger auf ein ebensolches trifft, muss doch auch einmal etwas Gutes getan werden in diesen schlimmen Zeiten. Als Josef Reithofer Anna, die ihn noch kurz vorher ausnehmen wollte, eine Stelle als Näherin vermitteln kann, tut er es. Reithofer ist jetzt ein selbstloses Mistvieh, immerhin! Große Wirkungen haben bekanntlich kleine Ursachen. Und große Ideen auch.<br />
+In seiner ersten selbständigen Prosaveröffentlichung aus dem Jahr 1930 ist Ödön von Horváth scharfer Beobachter eines neuen Menschentyps. Kleinbürger, die lernen, zu überleben, sich anzupassen, Privates und Politisches zusammen zu denken, auch wenn dabei so manche gedankliche Schieflage entsteht. In ihrer zwischen Dialekt und angelesenen Floskeln changierenden Sprache entlarven sie ihre Orientierungslosigkeit ebenso, wie sie ihr so leicht von außen beeinflussbares Bewusstsein demaskieren. Ödön von Horváth ging es mit dem Roman aber nicht um Parodie oder beißende Satire. Vielmehr hoffte auch er auf die bekanntlich großen Wirkungen durch kleine Ursachen. Und weil er dabei im werdenden Spießer zugleich den ewigen Spießer erkannte, hat so manche Charakterisierung im Roman bis heute nichts an Aktualität verloren. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'>Horváth
+<td class='mit'>Peter Simonischek
+<tr><td class='rol'>Kobler
+<td class='mit'>Stephan Zinner
+<tr><td class='rol'>Anna
+<td class='mit'>Brigitte Hobmeier
+<tr><td class='rol'>Herr mit energischem Zug
+<td class='mit'>Hannes Ringlstetter
+<tr><td class='rol'><td class='mit'>Markus Böker
+<tr><td class='rol'><td class='mit'>Peter Fröhlich
+<tr><td class='rol'><td class='mit'>Norman Hacker
+<tr><td class='rol'><td class='mit'>Irina Wanka
+<tr><td class='rol'><td class='mit'>Marie Theres Futterknecht
+<tr><td class='rol'><td class='mit'>Dieter Fischer
+<tr><td class='rol'><td class='mit'>Felix Hellmann
+<tr><td class='rol'><td class='mit'>Oliver Scheffel
+<tr><td class='rol'><td class='mit'>Wowo Habdank und Ulla Geiger
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td> <a href='dtsp.pl?av=%D6d%F6n+von&amp;a=Horv%E1th&amp;b=ewige+Spie%DFer&amp;n=1047734'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Horv%E1th&amp;b=Der+ewige+Spie%DFer&amp;c=BR+'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 4' class='navi' href='#4'>&larr; 4</a>
+  <a name='5'></a><span style='font-weight:bold; font-size:1.6em;'>| 5 |</span>
+  <a title='weiter zu Datensatz 6' class='navi' href='#6'>6 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1>Die Aleppo-Beule</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> SR 2 - Sonntag,  1. Feb 2015 17:04, (angekündigte Länge:    72:50)
+<br /><div class='streams'> [<a title='SR 2-Realplayer-Stream' href='http://live01.sr-online.de/sr/sr2_real_stream.pl'>real-Stream</a>] 
+ [<a title='SR 2-Windows Mediaplayer-Stream (16k)' href='http://live01.sr-online.de/sr/sr2_wm_16.pl'>winmedia-Stream</a>] 
+ [<a title='SR 2-Windows Mediaplayer-Stream (32k)' href='http://live01.sr-online.de/sr/sr2_wm_32.pl'>winmedia-Stream</a>] 
+ [<a title='SR 2-Windows Mediaplayer-Stream (64k)' href='http://live01.sr-online.de/sr/sr2_wm_64.pl'>winmedia-Stream</a>] 
+ [<a title='SR 2-MP3-Stream' href='http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w58a'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Gustave Akakpo<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>SR 2009    72 Min. (Stereo) -  </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Beatrix Ackers  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Henrik Albrecht  <br /></td></tr>
+<tr>
+<td class='right'>Übersetzer:</td>
+<td>Bettina Arlt  <br />Barbara Engelhardt  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Ein junger Togolese reist in das Land seines Vaters, irgendwo im vorderen Orient, um eine vergessene, eine sterbende Sprache zu erforschen. Sein Vater hatte dieses Land verlassen, nachdem er zu freimütig seine Meinung geäußert und deshalb zu oft im Gefängnis gesessen hatte. Seitdem wurde er nur noch "der Abwesende" genannt und von seinem Bruder und dessen Familie totgeschwiegen.<br />
+Trotzdem nimmt dieser Bruder seinen Neffen aus Togo mit offenen Armen auf, nicht ohne Hintergedanken - er möchte seine Tochter, die ungewollt schwanger ist, dem Neffen als Ehefrau schmackhaft machen und ihm so das uneheliche Kind der Tochter unterschieben, denn: Die Familien-Ehre steht auf dem Spiel. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'><td class='mit'>Roman Knizka
+<tr><td class='rol'><td class='mit'>Meriam Abbas
+<tr><td class='rol'><td class='mit'>Marietta Meguid
+<tr><td class='rol'><td class='mit'>Martin Engler
+<tr><td class='rol'><td class='mit'>Horst Bollmann
+<tr><td class='rol'><td class='mit'>Friedhelm Ptok
+<tr><td class='rol'><td class='mit'>u.a.
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td><img alt='Externer Link' title='Externer Link' src='img/extern.png' /> <a href='http://www.henrik-albrecht.de/'>Homepage Henrik Albrecht</a><br> 
+ <a href='dtsp.pl?av=Gustave&amp;a=Akakpo&amp;b=Aleppo-Beule&amp;n=1039797'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Akakpo&amp;b=Die+Aleppo-Beule&amp;c=SR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 5' class='navi' href='#5'>&larr; 5</a>
+  <a name='6'></a><span style='font-weight:bold; font-size:1.6em;'>| 6 |</span>
+  <a title='weiter zu Datensatz 7' class='navi' href='#7'>7 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Mord im 31. Stock</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> RB Nordwestradio - Sonntag,  1. Feb 2015 17:05, (angekündigte Länge:    55:07)
+<br /><div class='streams'> [<a title='RB Nordwestradio-Realplayer-Stream' href='http://www.radiobremen.de/stream/live.php?welle=nordwestradio&amp;media=rm'>real-Stream</a>] 
+ [<a title='RB Nordwestradio-Windows Mediaplayer-Stream' href='http://www.radiobremen.de/stream/live.php?welle=nordwestradio&amp;media=ms'>winmedia-Stream</a>] 
+ [<a title='RB Nordwestradio-MP3-Stream' href='http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w50a'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Per Wahlöö<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>RB 1984    55 Min. (Stereo) - Bearbeitung Literatur </td></tr>
+<tr>
+<td class='right'>Genre(s):</td>
+<td> Krimi<br> </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Gottfried von Einem  <br /></td></tr>
+<tr>
+<td class='right'>Bearbeiter:</td>
+<td>Hans Helge Ott  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Der zentrale Pressekonzern, der praktisch alle Publikationen des Landes herausgibt, bekommt eine anonyme Bombendrohung. Kommissar Jensen wird mit der Aufklärung des Falles betraut. Eine heikle Aufgabe, denn er wird ermahnt, der mächtigen Konzernleitung im Zuge der Ermittlungen möglichst nicht zu nahe zu treten. Jensen stellt fest, dass es im Konzerngebäude ein verstecktes einunddreißigstes Stockwerk gibt, von dem kaum einer weiß... </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'><td class='mit'>Christian Brückner
+<tr><td class='rol'><td class='mit'>Stephan Schwartz
+<tr><td class='rol'><td class='mit'>Gert Haucke
+<tr><td class='rol'><td class='mit'>Paul Edwin Roth
+<tr><td class='rol'><td class='mit'>Günter König
+<tr><td class='rol'><td class='mit'>Dieter Hufschmidt
+<tr><td class='rol'><td class='mit'>Heta Mantscheff
+<tr><td class='rol'><td class='mit'>Kurt Ackermann
+<tr><td class='rol'><td class='mit'>Harald Halgardt
+<tr><td class='rol'><td class='mit'>Dorothea Walda
+<tr><td class='rol'><td class='mit'>Hellmut Lange
+<tr><td class='rol'><td class='mit'>Siemen Rühaak
+<tr><td class='rol'><td class='mit'>Eva Maria Bauer
+<tr><td class='rol'><td class='mit'>Gerlach Fiedler
+<tr><td class='rol'><td class='mit'>Elske Lück
+<tr><td class='rol'><td class='mit'>Paul-Albert Krumm
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td> <a href='dtsp.pl?av=Per&amp;a=Wahl%F6%F6&amp;b=Mord+im+31.+Stock&amp;n=1011022'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Wahl%F6%F6&amp;b=+Mord+im+31.+Stock&amp;c=RB'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 6' class='navi' href='#6'>&larr; 6</a>
+  <a name='7'></a><span style='font-weight:bold; font-size:1.6em;'>| 7 |</span>
+  <a title='weiter zu Datensatz 8' class='navi' href='#8'>8 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Traumreise</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> MDR Figaro - Sonntag,  1. Feb 2015 18:00, (angekündigte Länge:    60:00)
+<br /><div class='streams'> [<a title='MDR Figaro-Realplayer-Stream' href='http://mdr.streamfarm.net/cms/_vr100/radios/mdr/live/figaro_cms'>real-Stream</a>] 
+ [<a title='MDR Figaro-Windows Mediaplayer-Stream' href='http://mdr.streamfarm.net/cms/_vm100/radios/mdr/live/figaro_cms.asx'>winmedia-Stream</a>] 
+ [<a title='MDR Figaro-MP3-Stream' href='http://avw.mdr.de/livestreams/mdr_figaro_live_128.m3u'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Christian Martin<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>DDR 1989    40 Min. (Stereo) - Originalhörspiel dt. </td></tr>
+<tr>
+<td class='right'>Genre(s):</td>
+<td> Mundarthörspiel<br> </td></tr>
+<tr>
+<td class='right'>Sprache:</td>
+<td> Dialekt</td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Peter Groeger  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Reinhard Walter  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Für Andy und Sandy geht mit ihrer Hochzeitsreise ein Traum in Erfüllung. Die Fahrt führt von Sachsen nach Moskau. Der erste Flug, das erste große Hotel - aber dann? Eine Katastrophe jagt die andere. Am Ende der Reise bleibt die Tatsache, dass sie näher zueinander gefunden haben. Eine DDR-Geschichte, die heute auch eine Reise in die Vergangenheit ist.<br />
+Teil der Vogtland-Trilogie (1: <a href='./select.php?S=0&col1=au.an&a=Martin&bool1=and&col2=ti&b=Traumreise'>'Traumreise'</a>, 2: <a href='./select.php?S=0&col1=au.an&a=Martin&bool1=and&col2=ti&b=Abseits'>'Abseits'</a>, 3: <a href='./select.php?S=0&col1=au.an&a=Martin&bool1=and&col2=ti&b=Golan'>'Golan'</a>) </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'>Andy
+<td class='mit'>Sven Seeburg
+<tr><td class='rol'>Sandy
+<td class='mit'>Sophia Schilbach
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td> <a href='dtsp.pl?av=Christian&amp;a=Martin&amp;b=Traumreise&amp;n=1003595'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Martin&amp;b=+Traumreise&amp;c=DDR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 7' class='navi' href='#7'>&larr; 7</a>
+  <a name='8'></a><span style='font-weight:bold; font-size:1.6em;'>| 8 |</span>
+  <a title='weiter zu Datensatz 9' class='navi' href='#9'>9 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Fünfkind</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> SWR 2 - Sonntag,  1. Feb 2015 18:20, (angekündigte Länge:    80:00)
+<br /><div class='streams'> [<a title='SWR 2-Windows Mediaplayer-Stream' href='http://lsd.newmedia.tiscali-business.com/bb/redirect.lsc?stream=swr$swr2$live.wma&amp;content=live&amp;media=ms'>winmedia-Stream</a>] 
+ [<a title='SWR 2-Realplayer-Stream' href='http://lsd.newmedia.tiscali-business.com/bb/redirect.lsc?stream=swr/swr2/live.rm&amp;content=live&amp;media=rm'>real-Stream</a>] 
+ [<a title='SWR 2-MP3-Stream' href='http://swr.ic.llnwd.net/stream/swr_mp3_m_swr2a'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Marie T. Martin<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>SWR 2013    80 Min. (Stereo) - Originalhörspiel dt. </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Felicitas Ott  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Christina Cordelia Messner  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Eine fünfköpfige Familie lebt in einem abgelegenen Dorf, jeder ist eine Welt für sich. Der Vater geht zwischen Zeitungsseiten spazieren, die Mutter wohnt im Kleiderschrank, Mira, die Jüngste, spricht mit Pflanzen und schreibt Briefe an ihr späteres Ich. Nacheinander verschwinden die Familienmitglieder, bis nur noch Mira und ihre Mutter übrig sind. Die Schwester ist untergetaucht, um eine berühmte Pianistin zu werden, der Bruder ist auf einem magischen Fahrrad davongefahren - und der Vater? Er bleibt mit seiner Krankheit und seinem Verschwinden das stille, geheimnisvolle Zentrum der Familie. Mira und ihre Mutter fangen in der Stadt ein neues Leben an - bis Mira ihre Geschwister eines Tages unverhofft wiedersieht. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'>Mira
+<td class='mit'>Birte Schnöink
+<tr><td class='rol'>Schwester
+<td class='mit'>Carmen Birk
+<tr><td class='rol'>F.
+<td class='mit'>Rafael Stachowiak
+<tr><td class='rol'>Mutter
+<td class='mit'>Oda Thormeyer
+<tr><td class='rol'>Nachbar
+<td class='mit'>Boris Koneczny
+<tr><td class='rol'><td class='mit'>Benjamin Grüter
+<tr><td class='rol'><td class='mit'>Susanne Heydenreich
+<tr><td class='rol'><td class='mit'>Anna Hort
+<tr><td class='rol'><td class='mit'>Jill Hus
+<tr><td class='rol'><td class='mit'>Markus Lerch
+<tr><td class='rol'><td class='mit'>Jonathan Saurer
+<tr><td class='rol'><td class='mit'>Linea Saurer
+<tr><td class='rol'><td class='mit'>Anna Windmüller
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td> <a href='dtsp.pl?av=Marie+T.&amp;a=Martin&amp;b=F%FCnfkind&amp;n=1045728'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Martin&amp;b=+F%FCnfkind&amp;c=SWR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 8' class='navi' href='#8'>&larr; 8</a>
+  <a name='9'></a><span style='font-weight:bold; font-size:1.6em;'>| 9 |</span>
+  <a title='weiter zu Datensatz 10' class='navi' href='#10'>10 &rarr;</a>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Tannöd</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> NDR Info - Sonntag,  1. Feb 2015 21:05, (angekündigte Länge:    77:00)
+<br /><div class='streams'> [<a title='NDR Info-Windows Mediaplayer-Stream' href='http://ndr-ndrinfo-hi-wma.wm.llnwd.net/ndr_ndrinfo_hi_wma'>winmedia-Stream</a>] 
+ [<a title='NDR Info-MP3-Stream' href='http://www.ndr.de/resources/metadaten/audio/m3u/ndrinfo.m3u'>mp3-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Andrea Maria Schenkel<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>NDR 2007    71 Min. (Stereo) - Bearbeitung Literatur </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Norbert Schaeffer  <br /></td></tr>
+<tr>
+<td class='right'>Bearbeiter:</td>
+<td>Norbert Schaeffer  <br /></td></tr>
+<tr>
+<td class='right'>Komponist(en):</td>
+<td>Martina Eisenreich  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Sie galten als eigenbrötlerisch, mürrisch und finster. Hausten auf einem abgelegenen, verwahrlosten Hof. Hüteten ein Geheimnis, von dem alle wussten. Jetzt sind sie tot: der Bauer, seine verhärmte alte Frau, die Tochter mit den beiden Kindern, die neue Magd. Ermordet mit einer Spitzhacke. Das Blutbad auf dem, in der Oberpfalz gelegenen Dannerhof Mitte der fünfziger Jahre wird in diversen Hörbildern rekonstruiert: Protokolle der Dorfbewohner wechseln sich ab mit inneren Monologen. Alle kommen zu Wort, auch der Mörder. Die einzelnen Stimmen schwellen an zu einem Stimmenchor aus Lebenden und Toten, Schuldigen und Unschuldigen, dem Täter und den Opfern. Immer engmaschiger webt Andrea Maria Schenkel ihre Textur aus Protokollen und Erzählung, Außen- und Innenbetrachtung, Chronik und Alptraum. Schlussendlich enthüllt sie weit mehr als nur den Mörder: eine Familien-Tragödie archaischen Zuschnitts und das Porträt einer von Katholizismus und Bigotterie beherrschten bäuerlichen Dorfgemeinschaft mit traumatischem Beziehungsgeflecht.<br />
+<br />
+Die Geschichte trug sich tatsächlich zu, 1922 in Oberbayern: Anfang April durchsuchten Dorfbewohner den Einödhof Hinterkaifeck, weil ein Kind unentschuldigt in der Schule fehlte. Bauer, Bäuerin, deren verwitwete Tochter, Enkelin, Enkel und Dienstmagd - alle waren ermordet worden. Der Hof wurde bereits 1923 abgebrochen, die Akten 1955 geschlossen. Der Mörder ist nie gefunden worden. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'>Georg
+<td class='mit'>Michael Vogtmann
+<tr><td class='rol'>Betty als Kind
+<td class='mit'>Katharina Schmuttermaier
+<tr><td class='rol'>Marianne
+<td class='mit'>Elisabeth Tscharke
+<tr><td class='rol'>Theresia
+<td class='mit'>Christa Berndl
+<tr><td class='rol'>Traudl
+<td class='mit'>Franziska Ball
+<tr><td class='rol'>Meiler
+<td class='mit'>Monika Manz
+<tr><td class='rol'>Eibl
+<td class='mit'>Stephan Zinner
+<tr><td class='rol'>Kurt
+<td class='mit'>Markus Brandl
+<tr><td class='rol'>Michael
+<td class='mit'>Udo Wachtveitl
+<tr><td class='rol'>Hermann
+<td class='mit'>Rudolf Waldemar Brem
+<tr><td class='rol'><td class='mit'>Jörg Hube
+<tr><td class='rol'><td class='mit'>Brigitte Hobmeier
+<tr><td class='rol'><td class='mit'>Ferdinand Weiß
+<tr><td class='rol'><td class='mit'>Alexander Duda
+<tr><td class='rol'><td class='mit'>Heiko Ruprecht
+<tr><td class='rol'><td class='mit'>Jutta Schmuttermaier
+<tr><td class='rol'><td class='mit'>Caroline Ebner
+<tr><td class='rol'><td class='mit'>Philipp Moog
+<tr><td class='rol'><td class='mit'>Ilse Neubauer
+<tr><td class='rol'><td class='mit'>Michael Habeck
+<tr><td class='rol'><td class='mit'>Barbara Bauer
+<tr><td class='rol'><td class='mit'>Charlotte Bufler
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td><img alt='Externer Link' title='Externer Link' src='img/extern.png' /> <a href='http://www.andreamariaschenkel.de/'>Homepage Andrea Maria Schenkel</a><br> 
+<img alt='Externer Link' title='Externer Link' src='img/extern.png' /> <a href='http://www.martina-eisenreich.com/'>Homepage Martina Eisenreich</a><br> 
+ <a href='dtsp.pl?av=Andrea+Maria&amp;a=Schenkel&amp;b=Tann%F6d&amp;n=1037219'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Schenkel&amp;b=+Tann%F6d&amp;c=NDR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<table><colgroup><col width='10%'><col width='90%'></colgroup>
+<tr>
+<td class='navi' colspan='2'>
+  <a title='zurück zu Datensatz 9' class='navi' href='#9'>&larr; 9</a>
+  <a name='10'></a><span style='font-weight:bold; font-size:1.6em;'>| 10 |</span>
+</td>
+</tr>
+<tr>
+<th colspan='2'><h1> Geschichte des Publikums</h1></th>
+</tr>
+<tr>
+<td class='right'>Sendetermine:</td>
+<td> DLR - Montag,  2. Feb 2015 00:05, (angekündigte Länge:    55:00)
+<br /><div class='streams'> [<a title='DLR-Windows Mediaplayer-Stream' href='http://www.dradio.de/streaming/dkultur.asx'>winmedia-Stream</a>] 
+ [<a title='DLR-MP3-Stream' href='http://www.dradio.de/streaming/dkultur.m3u'>mp3-Stream</a>] 
+ [<a title='DLR-Ogg Vorbis-Stream (mittlere Qualität)' href='http://www.dradio.de/streaming/dkultur_mq_ogg.m3u'>ogg-Stream</a>] 
+ [<a title='DLR-Ogg Vorbis-Stream (hohe Qualität)' href='http://www.dradio.de/streaming/dkultur_hq_ogg.m3u'>ogg-Stream</a>] 
+</div>
+</td></tr>
+<tr>
+<td class='right'>Autor(en):</td>
+<td>Hannah Hofmann<br />Sven Lindholm<br /></td></tr>
+<tr>
+<td class='right'>Produktion:</td>
+<td>DLR 2008    47 Min. (Stereo) - Originalhörspiel dt. </td></tr>
+<tr>
+<td class='right'>Regisseur(e):</td>
+<td>Hannah Hofmann  <br />Sven Lindholm  <br /></td></tr>
+<tr>
+<td class='right'>Inhaltsangabe:</td>
+<td>Ein Mann hat sich in der Bibliothek ein Buch ausgeliehen, hat alle Gebrauchsspuren bis zum Barcode in sein privates Exemplar kopiert und dieses nun als vermeintliches Original in den Leihverkehr eingespeist. Reale Personen inszenieren reale Handlungen in einer realen Welt.<br />
+Im Hörspiel dokumentieren sie ihre subversiven Eingriffe in die Wirklichkeit, berichten, wie sie Öffentliches nachgeahmt und dann das Private in die Öffentlichkeit eingeschmuggelt haben, wie sie die Öffentlichkeit re-privatisiert haben. Ihre Interventionen sind Aufforderungen, zu handeln und die individuelle Teilhabe an der Geschichte einzuklagen. </td></tr>
+<tr>
+<td class='right'>Mitwirkende:</td>
+<td><table class='mit'><tr><td class='rol'><td class='mit'>Roland Görschen
+<tr><td class='rol'><td class='mit'>David Prosenc
+<tr><td class='rol'><td class='mit'>Uta Wallstab
+<tr><td class='rol'><td class='mit'>Marcus Zilz
+</table></td></tr>
+<tr>
+<td class='right'>Links:</td>
+<td><img alt='Externer Link' title='Externer Link' src='img/extern.png' /> <a href='http://www.gebenundnehmen.de/'>Homepage Hannah Hofmann und Sven Lindholm</a><br> 
+<img alt='Externer Link' title='Externer Link' src='img/extern.png' /> <a href='http://www.gebenundnehmen.de/'>Homepage Hannah Hofmann und Sven Lindholm</a><br> 
+ <a href='dtsp.pl?av=Hannah&amp;a=Hofmann&amp;b=Geschichte+des+Publikums&amp;n=1038474'>Mailformular für Ergänzungen zu diesem Titel</a><br>
+ <a href='pdf.pl?a=Hofmann&amp;b=+Geschichte+des+Publikums&amp;c=DLR'>Druckausgabe (PDF)</a><br>
+</td>
+</tr>
+</table>
+<hr><p><b>10</b> Datensätze gefunden in <b>0.0078020095825195</b> Sekunden</p>
+<hr><br><a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-27">gestern</a> | <a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-28">heute</a> | <a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-29">morgen</a> | <a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-30">30. Jan</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-01-31">31. Jan</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-01"> 1. Feb</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-02"> 2. Feb</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-03"> 3. Feb</a> | 
+<a class="small" href="/index.php?aktion=suche&amp;dat=2015-02-04"> 4. Feb</a> | 
+<div style='margin-left:400px; float: left; padding: 0em 2em;'>
+<a name='0'></a>
+
+</div>
+</body>
+</html>
