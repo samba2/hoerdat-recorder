@@ -27,7 +27,32 @@ class TestParser(unittest.TestCase):
                 ' (angekündigte Länge:    55:00)']
 
         self.assertEqual(expected, self.parser.make_transmission_info_list(tables[0]))
-        
+
+    def test_choose_stream(self):
+        streams = [{'title' : 'MDR Figaro-Realplayer-Stream',
+                    'href' : 'http://reallink'},
+                   {'title' : 'MDR Figaro-Windows Mediaplayer-Stream',
+                    'href' : 'http://mediaplayerlink'},
+                   {'title' : 'MDR Figaro-MP3-Stream',
+                    'href' : 'http://mp3link'},
+                   {'title' : 'MDR Figaro-Ogg Vorbis-Stream (hohe Qualität)',
+                    'href' : 'http://ogglink_high'},
+                   {'title' : 'MDR Figaro-Ogg Vorbis-Stream (mittlere Qualität)',
+                    'href' : 'http://ogglink_low'}]
+
+        self.assertEqual('http://mp3link', self.parser.choose_stream(streams))
+
+        del streams[2] # remove MP3
+        self.assertEqual('http://ogglink_high', self.parser.choose_stream(streams))
+
+        del streams[2] # remove ogg high
+        self.assertEqual('http://mediaplayerlink', self.parser.choose_stream(streams))
+        del streams[1] # remove mediaplayer
+
+        # default
+        self.assertEqual('http://reallink', self.parser.choose_stream(streams))
+
+
 
     def test_first_airplay(self):
         airplay = self.parser.fetch_airplays(self.test_file)[0]
@@ -36,3 +61,5 @@ class TestParser(unittest.TestCase):
         self.assertEqual('07:05 01.02.2015', airplay.date)
         self.assertEqual(55, airplay.length)
 
+        expected = 'http://avw.mdr.de/livestreams/mdr_figaro_live_128.m3u'
+        self.assertEqual(expected, airplay.url)

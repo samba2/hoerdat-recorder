@@ -17,6 +17,7 @@ class Parser():
             airplay.station = self.find_station(info_list)
             airplay.date = self.find_date(info_list)
             airplay.length = self.find_length(table)
+            airplay.url = self.find_url(table)
 
             airplays.append(airplay)
     
@@ -67,6 +68,17 @@ class Parser():
         return int(result.group(1))
 
 
+    # create list of streams containing title and href, return the prevered one
+    def find_url(self, table):
+        stream_links = table.find_all("div", class_="streams")[0].find_all("a")
+
+        streams = []
+        for link in stream_links:
+                streams.append(link.attrs)
+
+        return self.choose_stream(streams)
+
+
     def convert_to_atd_format(self, raw_date_string):
         month_name_to_number = { 
                 'Jan' : 1, 'Feb' : 2, 'Mär' : 3, 'Apr' : 4, 'Mai' : 5, 
@@ -85,6 +97,30 @@ class Parser():
         return date.strftime("%H:%M %d.%m.%Y")
 
 
+    def choose_stream(self, streams):
+
+        def find_stream(search_string):
+            for stream in streams:
+                if search_string in stream['title']:
+                    return stream['href']
+
+            return None
+
+        url = find_stream("MP3")
+        if url is not None:
+            return url
+
+        url = find_stream("Ogg Vorbis-Stream (hohe Qualität)")
+        if url is not None:
+            return url
+        
+        url = find_stream("Mediaplayer")
+        if url is not None:
+            return url
+
+        return streams[0]['href']
+
+
     def beautify(self, text):
         text = text.strip()
         text = re.sub(' +', ' ', text)
@@ -98,3 +134,4 @@ class Airplay():
         self.station = None
         self.date = None
         self.length = None
+        self.url = None
