@@ -22,11 +22,11 @@ class TestParser(unittest.TestCase):
     
     def test_make_transmission_info_list(self):
         tables = self.parser.retrieve_airplay_tables(self.test_file)
-        expected = ['MDR Figaro - Sonntag', 
-                '  1. Feb 2015 07:05', 
-                ' (angekündigte Länge:    55:00)']
 
-        self.assertEqual(expected, self.parser.make_transmission_info_list(tables[0]))
+        list = self.parser.make_transmission_info_list(tables[0])
+        self.assertTrue('MDR Figaro - Sonntag' in list)
+        self.assertTrue(' 1. Feb 2015 07:05' in list)
+
 
     def test_choose_stream(self):
         streams = [{'title' : 'MDR Figaro-Realplayer-Stream',
@@ -63,3 +63,15 @@ class TestParser(unittest.TestCase):
 
         expected = 'http://avw.mdr.de/livestreams/mdr_figaro_live_128.m3u'
         self.assertEqual(expected, airplay.url)
+
+        self.assertEqual('Hans Pfeiffer', airplay.author)
+
+        expected = 'DDR 1961 32 Min. (Mono) - Originalhörspiel dt.'
+        self.assertEqual(expected, airplay.production)
+
+        self.assertTrue('Kinderhörspiel' in airplay.genre)
+        self.assertTrue('Krimi' in airplay.genre)
+        self.assertTrue('Komödie' in airplay.genre)
+
+        self.assertTrue('Der berühmte Privatdetektiv Dickson' in airplay.description)
+        self.assertTrue('Polizei und der Gangster auf sich.' in airplay.description)

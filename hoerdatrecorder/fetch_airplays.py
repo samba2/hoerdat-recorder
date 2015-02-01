@@ -18,6 +18,10 @@ class Parser():
             airplay.date = self.find_date(info_list)
             airplay.length = self.find_length(table)
             airplay.url = self.find_url(table)
+            airplay.author = self.find_right_column(table, 'Autor(en):')
+            airplay.production = self.find_right_column(table, 'Produktion:')
+            airplay.genre = self.find_genre(table)
+            airplay.description = self.find_right_column(table, 'Inhaltsangabe:')
 
             airplays.append(airplay)
     
@@ -36,21 +40,28 @@ class Parser():
         return soup.find_all(filter_airplay_tables)
 
 
-    def make_transmission_info_list(self, table):
-        return self.make_info_string(table).strip().split(',')
+    def find_right_column(self, table, search_string):
+        def match_left_column(tag):
+            return tag.name == "tr" and tag.td and tag.td.text == search_string
 
+        right_column = table.find_all(match_left_column)
+        if not right_column:
+            return None
+                        
+        cell = right_column[0].find_all('td')[1].text
 
-    def make_info_string(self, table):
-        def filter_transmission_info(tag):
-            return tag.name == "tr" and tag.td and tag.td.text == 'Sendetermine:'
-
-        return table.find_all(filter_transmission_info)[0].find_all('td')[1].contents[0]
-
+        return self.beautify(cell)
     
+
+    def make_transmission_info_list(self, table):
+        cell = self.find_right_column(table, 'Sendetermine:')
+        return cell.strip().split(',')
+
+
     def find_title(self, table):
         return self.beautify(table.find_all("th")[0].text)
 
-    
+
     def find_station(self, info_list):
         return info_list[0].split('-')[0].strip()
 
@@ -60,7 +71,7 @@ class Parser():
 
 
     def find_length(self, table):
-        result = re.search(r"angekündigte Länge:\s+(\d{1,2}):\d\d", self.make_info_string(table))
+        result = re.search(r"angekündigte Länge:\s+(\d{1,2}):\d\d", self.find_right_column(table, 'Sendetermine:'))
 
         if result is None:
             return 0
@@ -77,6 +88,15 @@ class Parser():
                 streams.append(link.attrs)
 
         return self.choose_stream(streams)
+
+
+    def find_genre(self, table):
+        genre_text = self.find_right_column(table, 'Genre(s):')
+
+        if genre_text is None:
+            return genre_text
+
+        return genre_text.split(' ')
 
 
     def convert_to_atd_format(self, raw_date_string):
@@ -135,3 +155,7 @@ class Airplay():
         self.date = None
         self.length = None
         self.url = None
+        self.author = None
+        self.production = None
+        self.genre = []
+        self.description = None
