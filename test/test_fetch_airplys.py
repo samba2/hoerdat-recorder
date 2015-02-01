@@ -53,10 +53,12 @@ class TestParser(unittest.TestCase):
         self.assertEqual('http://reallink', self.parser.choose_stream(streams))
 
 
-
     def test_first_airplay(self):
         airplay = self.parser.fetch_airplays(self.test_file)[0]
-        self.assertEqual("Die haarsträubenden Abenteuer des Detektivs Dick Dickson 1: Jagd nach dem Niespulver", airplay.title)
+        expected = "Die haarsträubenden Abenteuer des Detektivs Dick "
+        expected += "Dickson 1: Jagd nach dem Niespulver"
+
+        self.assertEqual(expected, airplay.title)
         self.assertEqual("MDR Figaro", airplay.station)
         self.assertEqual('07:05 01.02.2015', airplay.date)
         self.assertEqual(55, airplay.length)
@@ -73,5 +75,5 @@ class TestParser(unittest.TestCase):
         self.assertTrue('Krimi' in airplay.genre)
         self.assertTrue('Komödie' in airplay.genre)
 
-        self.assertTrue('Der berühmte Privatdetektiv Dickson' in airplay.description)
-        self.assertTrue('Polizei und der Gangster auf sich.' in airplay.description)
+        self.assertTrue('Der berühmte Privatdetektiv' in airplay.description)
+        self.assertTrue('der Gangster auf sich.' in airplay.description)

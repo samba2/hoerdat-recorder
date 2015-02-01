@@ -44,13 +44,13 @@ class Parser():
         def match_left_column(tag):
             return tag.name == "tr" and tag.td and tag.td.text == search_string
 
-        right_column = table.find_all(match_left_column)
-        if not right_column:
+        row = table.find_all(match_left_column)
+        if not row:
             return None
                         
-        cell = right_column[0].find_all('td')[1].text
+        right_column = row[0].find_all('td')[1].text
 
-        return self.beautify(cell)
+        return self.beautify(right_column)
     
 
     def make_transmission_info_list(self, table):
@@ -71,7 +71,8 @@ class Parser():
 
 
     def find_length(self, table):
-        result = re.search(r"angekündigte Länge:\s+(\d{1,2}):\d\d", self.find_right_column(table, 'Sendetermine:'))
+        pattern = r"angekündigte Länge:\s+(\d{1,2}):\d\d"
+        result = re.search(pattern, self.find_right_column(table, 'Sendetermine:'))
 
         if result is None:
             return 0
@@ -108,11 +109,12 @@ class Parser():
         date_elements = re.sub('\.', '', raw_date_string).strip().split(' ')
         time = date_elements[3].split(':')
 
-        date = datetime.datetime(int(date_elements[2]), 
-                                 int(month_name_to_number[date_elements[1]]), 
-                                 int(date_elements[0]), 
-                                 int(time[0]), 
-                                 int(time[1]))
+        date = datetime.datetime(
+                int(date_elements[2]), 
+                int(month_name_to_number[date_elements[1]]), 
+                int(date_elements[0]), 
+                int(time[0]), 
+                int(time[1]))
 
         return date.strftime("%H:%M %d.%m.%Y")
 
